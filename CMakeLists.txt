@@ -14,25 +14,19 @@ find_package(OpenCV REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
 
-# Use vulkan headers from glfw:
 include_directories(${PROJECT_NAME}
     ${OpenCV_INCLUDES}
     ${OpenGL_INCLUDES}
     ${SDL2_INCLUDES}
     )
 
-file(GLOB sources *.cpp)
+file(GLOB sources
+    *.cpp
+    imgui/*.cpp
+    )
 
 add_executable(${PROJECT_NAME}
-    main.cpp
-    imdrawlist_party.cpp
-    imgui/imgui_impl_opengl3.cpp
-    imgui/imgui_impl_sdl.cpp
-    imgui/imgui.cpp
-    imgui/imgui_draw.cpp
-    imgui/imgui_demo.cpp
-    imgui/imgui_tables.cpp
-    imgui/imgui_widgets.cpp
+    ${sources}
     )
 
 target_link_libraries(${PROJECT_NAME}
