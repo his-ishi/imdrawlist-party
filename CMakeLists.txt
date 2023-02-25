@@ -27,6 +27,15 @@ add_executable(${PROJECT_NAME}
     ${sources}
     )
 
+#set_target_properties(${PROJECT_NAME} PROPERTIES
+#    LINK_FLAGS /SUBSYSTEM:WINDOWS
+#    )
+
+target_link_options(${PROJECT_NAME}
+    PUBLIC -static
+    PUBLIC -mwindows
+    )
+
 target_link_libraries(${PROJECT_NAME}
     ${OpenCV_LIBRARIES}
     opengl32
