@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.11...3.25)
 project(imdrawlist-party C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
