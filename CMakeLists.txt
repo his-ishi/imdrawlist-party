@@ -2,9 +2,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(imdrawlist-party C CXX)
 
-set(CMAKE_CXX_STANDARD 11)
-#set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DVK_PROTOTYPES")
-#set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DVK_PROTOTYPES")
+set(CMAKE_CXX_STANDARD 17)
 
 # Dear ImGui
 include_directories(imgui)

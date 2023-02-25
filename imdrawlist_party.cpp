@@ -24,7 +24,9 @@
 #include "imgui.h"
 #define IMGUI_DEFINE_MATH_OPERATORS // Access to math operators
 #include "imgui_internal.h"
-
+#include <cassert>
+#include <algorithm>
+#include <functional>
 // Function signature:
 //  void FX(ImDrawList* d, ImVec2 a, ImVec2 b, ImVec2 sz, ImVec4 mouse, float t);
 //     d : draw list
@@ -38,7 +40,11 @@
 
 // Insert your code in fx.inl
 // This is the file which size we are measuring, and should be kept <1024 bytes
-#include "fx.inl" // <--- your effect
+// #include "fx.inl" // <--- your effect
+//#include "fx2.inl" // <--- your effect
+//#include "fx3.inl" // <--- your effect
+//#include "fx4.inl" // <--- your effect
+#include "fx5.inl" // <--- your effect
 
 // Shared testbed
 void FxTestBed()
