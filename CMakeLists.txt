@@ -1,6 +1,5 @@
-
 cmake_minimum_required(VERSION 2.11...3.25)
-project(imdrawlist-party C CXX)
+project(party C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -12,10 +11,10 @@ find_package(OpenCV REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
 
-include_directories(${PROJECT_NAME}
-    ${OpenCV_INCLUDES}
-    ${OpenGL_INCLUDES}
-    ${SDL2_INCLUDES}
+include_directories(
+    ${OpenCV_INCLUDE_DIRS}
+    ${OPENGL_INCLUDE_DIRS}
+    ${SDL2_INCLUDE_DIRS}
     )
 
 file(GLOB sources
@@ -31,14 +30,9 @@ add_executable(${PROJECT_NAME}
 #    LINK_FLAGS /SUBSYSTEM:WINDOWS
 #    )
 
-target_link_options(${PROJECT_NAME}
-    PUBLIC -static
-    PUBLIC -mwindows
-    )
-
 target_link_libraries(${PROJECT_NAME}
     ${OpenCV_LIBRARIES}
-    opengl32
+    ${OPENGL_LIBRARIES}
     ${SDL2_LIBRARIES}
     )
 
